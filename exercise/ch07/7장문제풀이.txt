@@ -1,0 +1,47 @@
+3. 오버라이딩
+정의: 
+상속받아서 수정
+필요성:
+메소드의 다형성
+
+4. 
+c > 넓은 범위
+d > 좁은 범위
+
+5. 
+자식에서 부모 생성자 super() x
+Tv() {
+	super(10);
+}
+
+6.
+조상클래스의 인스턴스 변수들은
+자손에서가 아닌 조상에서 초기화 진행해야한다
+
+7.
+child(int x)생성자에서
+1.super()로 부모 기본 생성자로 Parent instance먼저 생성
+2.child() 생성자로 Child instance 생성
+결과
+x=200출력
+
+8.
+a. public > protected > default > private
+
+9.
+c. 메서드 - 오버라이딩을 할 수 없다
+
+12.
+c. 지역변수엔 접근제어자 X
+
+13.
+Math 클래스의 멤버는 모두 static
+
+15.
+c. Unit > GroundUnit 불가
+e. Unit > Tank 불가
+
+16.
+e.
+
+
