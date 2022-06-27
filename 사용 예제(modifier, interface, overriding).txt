@@ -1,0 +1,139 @@
+===================================================================================================
+(1).static
+
+public final class Math {
+
+    private Math() {}
+
+    public static final double E = 2.7182818284590452354;
+
+    
+    public static final double PI = 3.14159265358979323846;
+
+    public static double sin(double a) {
+        return StrictMath.sin(a); // default impl. delegates to StrictMath
+    }
+
+
+    public static double cos(double a) {
+        return StrictMath.cos(a); // default impl. delegates to StrictMath
+    }
+
+  
+    public static double tan(double a) {
+        return StrictMath.tan(a); // default impl. delegates to StrictMath
+    }
+
+   
+    public static double asin(double a) {
+        return StrictMath.asin(a); // default impl. delegates to StrictMath
+    }
+
+  
+    public static double acos(double a) {
+        return StrictMath.acos(a); // default impl. delegates to StrictMath
+    }
+
+  
+    public static double atan(double a) {
+        return StrictMath.atan(a); // default impl. delegates to StrictMath
+    }
+
+ 
+    public static double toRadians(double angdeg) {
+        return angdeg / 180.0 * PI;
+    }
+
+  
+    public static double toDegrees(double angrad) {
+        return angrad * 180.0 / PI;
+    }
+
+  
+    public static double exp(double a) {
+        return StrictMath.exp(a); // default impl. delegates to StrictMath
+    }
+
+  
+    public static double log(double a) {
+        return StrictMath.log(a); // default impl. delegates to StrictMath
+    }
+
+   
+    public static double log10(double a) {
+        return StrictMath.log10(a); // default impl. delegates to StrictMath
+    }
+
+ 
+    public static double sqrt(double a) {
+        return StrictMath.sqrt(a); // default impl. delegates to StrictMath                    
+    }
+
+===================================================================================================
+(2).final
+(3).overriding
+public final class String
+    implements java.io.Serializable, Comparable<String>, CharSequence {
+
+    public void getBytes(int srcBegin, int srcEnd, byte dst[], int dstBegin) {}
+
+  
+    public byte[] getBytes(String charsetName)
+            throws UnsupportedEncodingException {...}
+
+    public byte[] getBytes(Charset charset) {...}
+
+ 
+    public byte[] getBytes() {...}
+}
+===================================================================================================
+(4).abstract
+public abstract class Number implements java.io.Serializable {
+ 
+    public abstract int intValue();
+
+    public abstract long longValue();
+
+    
+    public abstract float floatValue();
+
+ 
+    public abstract double doubleValue();
+
+ 
+    public byte byteValue() {
+        return (byte)intValue();
+    }
+
+    public short shortValue() {
+        return (short)intValue();
+    }
+
+    private static final long serialVersionUID = -8742448824652078965L;
+}
+===================================================================================================
+(5).interface
+public interface Collection<E> extends Iterable<E> {
+    
+    int size();
+   
+    boolean isEmpty();
+   
+    boolean contains(Object o);
+
+    Iterator<E> iterator();
+  
+    Object[] toArray();
+    
+    <T> T[] toArray(T[] a);
+    
+    boolean add(E e);
+   
+    boolean remove(Object o);
+    
+    boolean containsAll(Collection<?> c);
+
+    boolean addAll(Collection<? extends E> c);
+
+}
+
