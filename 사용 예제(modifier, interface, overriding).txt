@@ -72,19 +72,36 @@ public final class Math {
 ===================================================================================================
 (2).final
 (3).overriding
+
+Ojbect Class
+public boolean equals(Object obj) {
+        return (this == obj);
+    }
+
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence {
 
-    public void getBytes(int srcBegin, int srcEnd, byte dst[], int dstBegin) {}
-
-  
-    public byte[] getBytes(String charsetName)
-            throws UnsupportedEncodingException {...}
-
-    public byte[] getBytes(Charset charset) {...}
-
- 
-    public byte[] getBytes() {...}
+    public boolean equals(Object anObject) {
+        if (this == anObject) {
+            return true;
+        }
+        if (anObject instanceof String) {
+            String anotherString = (String)anObject;
+            int n = value.length;
+            if (n == anotherString.value.length) {
+                char v1[] = value;
+                char v2[] = anotherString.value;
+                int i = 0;
+                while (n-- != 0) {
+                    if (v1[i] != v2[i])
+                        return false;
+                    i++;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
 }
 ===================================================================================================
 (4).abstract
