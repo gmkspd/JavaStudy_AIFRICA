@@ -1,0 +1,43 @@
+#Checked exception 예제
+-반드시 예외 처리해야함
+-IOException
+-SQLException
+
+#Unchecked exception 예제
+-예외 처리 하지 않아도 됨
+-NullPointerException
+-IllegalArgumentException; 적합하지 않거나(illegal) 적절하지 못한(inappropriate) 인자를 메소드에 넘겨주었을 때 발생
+
+#Finally 예제, Try with resource 예제
+try 구문 내에서 열린 리소스를 닫는데 사용
+Java 7 에서 더 좋은 리소스 처리법이 나오면서, 안좋은 방법으로 여겨지고 있다.
+public static void main(String args[]) throws IOException {
+    FileInputStream is = null;
+    BufferedInputStream bis = null;
+    try {
+        is = new FileInputStream("file.txt");
+        bis = new BufferedInputStream(is);
+        int data = -1;
+        while((data = bis.read()) != -1){
+            System.out.print((char) data);
+        }
+    } finally {
+        // close resources
+        if (is != null) is.close();
+        if (bis != null) bis.close();
+    }
+}
+
+#Re-throwing 예제
+Rethrowing은 이미 잡은 exception을 다시 던지는 것을 의미
+반면에 wrapping은 이미 잡은 exception을 다른 exception 안에 포함하는 것을 의미
+
+public String readFirstLine(String url) throws FileNotFoundException {  
+        try {
+            Scanner scanner = new Scanner(new File(url));
+            return scanner.nextLine();
+        } catch(FileNotFoundException ex) {
+            // throw ex; 하면 rethrowing 
+            // throw new SomeOtherException(ex);  하면 wrapping
+        }
+    }
